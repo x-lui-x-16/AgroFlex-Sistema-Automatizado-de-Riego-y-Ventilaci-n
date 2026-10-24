@@ -99,11 +99,46 @@ El ciclo general comprende las siguientes etapas:
 
 Este funcionamiento permite integrar la supervisión ambiental y el control de dos actuadores en un mismo módulo, manteniendo la posibilidad de adaptar los parámetros de funcionamiento a las necesidades del cultivo de prueba.
 
-
-
 ## Diagrama de funcionamiento
 El siguiente diagrama representa el ciclo de monitoreo, evaluación y respuesta automática de AgroFlex.
-
 <p align="center">
-  
+  <img width="1920" height="2265" alt="DiagramadeFUNC" src="https://github.com/user-attachments/assets/996178f0-1285-4398-af0b-559664981436" />
 </p>
+
+## 5. Componentes y arquitectura del sistema
+AgroFlex está compuesto por un conjunto de elementos electrónicos y mecánicos que trabajan de manera coordinada para supervisar las condiciones del entorno y automatizar el cuidado de las plantas. El sistema utiliza sensores para obtener información del suelo y del ambiente, un microcontrolador para procesar las lecturas y actuadores que responden a las condiciones detectadas.
+
+El diseño busca mantener una estructura compacta, adaptable y fácil de instalar en macetas, jardines, huertos domésticos o invernaderos existentes, sin necesidad de construir una estructura nueva.
+
+### 5.1. Componentes principales
+| Imagen | Componente y función |
+|---|---|
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/fe2b7c20-2a54-4e14-8a7f-f0a9d40189d1" /> | **Arduino Nano Every — Unidad de control**<br>Es el microcontrolador encargado de recibir las lecturas de los sensores, evaluar las condiciones programadas y controlar el funcionamiento del sistema de riego y ventilación. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/b6509021-ae83-49fc-8659-abb9f295c771" /> | **Sensor de humedad del suelo**<br>Mide la humedad del sustrato para determinar si la planta necesita agua. Su lectura permite activar el riego cuando la humedad desciende por debajo del umbral configurado. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/a0ef645e-5f1e-4a32-b0b5-86ea2a3df256" /> | **Sensor DHT22 — Temperatura ambiental**<br>Registra la temperatura del ambiente para que el sistema pueda identificar cuándo se supera el límite establecido y activar la ventilación. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/7e047434-e465-420a-9f84-64f378195c78" /> | **Mini bomba de agua**<br>Permite suministrar agua a la planta cuando el sistema detecta que la humedad del suelo es inferior al valor establecido. La elección depende de la configuración hidráulica del prototipo. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/6b2eae1e-5a37-4a6e-a437-c9cef4b66b6f" /> | **Mini ventilador**<br>Favorece la circulación del aire cuando la temperatura ambiental supera el umbral programado. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/01c7bb58-f405-4b1b-8fdc-37d354d673f3" /> | **Pantalla LCD con interfaz I2C**<br>Presenta información del sistema, como las lecturas de los sensores y el estado de funcionamiento, para facilitar la supervisión del prototipo. |
+| <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/47b4fa81-af9f-48db-8f11-94693b8e9500" /> | **Modulo Relé**<br>Permite accionar la bomba y el ventilador desde las señales de control del microcontrolador. Debe utilizarse una etapa de potencia adecuada para las características eléctricas de cada actuador. |
+
+### 5.2. Arquitectura de funcionamiento
+El sistema sigue una secuencia de supervisión, procesamiento y respuesta automática:
+
+1. **Captura de datos:** los sensores registran la humedad del suelo y la temperatura ambiental.
+2. **Procesamiento:** el Arduino Nano Every recibe las lecturas y las compara con los umbrales configurados.
+3. **Decisión:** el programa determina si es necesario activar el riego, la ventilación o mantener ambos sistemas apagados.
+4. **Accionamiento:** el circuito de control activa el dispositivo correspondiente cuando se cumple una condición.
+5. **Visualización:** la pantalla LCD muestra información relevante para conocer el estado del sistema.
+6. **Repetición del ciclo:** el sistema vuelve a leer los sensores para actualizar las decisiones mientras permanece encendido.
+
+### 5.3. Criterios de control
+| Variable supervisada | Condición programada | Respuesta esperada |
+|---|---|---|
+| Humedad del suelo | La humedad cae por debajo del umbral configurado. | Activar el riego durante el tiempo definido en el programa y volver a evaluar la humedad. |
+| Temperatura ambiental | La temperatura supera el límite establecido. | Activar el ventilador para favorecer la circulación del aire. |
+| Condiciones normales | Los valores se mantienen dentro de los límites configurados. | Mantener los actuadores apagados cuando no sean necesarios. |
+
+Los umbrales y tiempos de activación deben ajustarse mediante pruebas, considerando el tipo de planta, las características del sustrato, la ubicación de los sensores y las necesidades de ventilación.
+
+
+
