@@ -140,5 +140,39 @@ El sistema sigue una secuencia de supervisión, procesamiento y respuesta autom�
 
 Los umbrales y tiempos de activación deben ajustarse mediante pruebas, considerando el tipo de planta, las características del sustrato, la ubicación de los sensores y las necesidades de ventilación.
 
+## 6. Prototipo y galería de imágenes
+En esta sección se documenta el desarrollo físico de AgroFlex mediante fotografías del montaje, la distribución de sus componentes y las pruebas realizadas. La galería permite observar cómo se integran los elementos electrónicos e hidráulicos para formar un sistema compacto de riego y ventilación automatizados.
 
+Las imágenes también sirven como registro del progreso del proyecto y facilitan que otras personas comprendan la construcción y el funcionamiento del prototipo.
+
+### 6.1. Galería del prototipo
+| Imagen | Descripción |
+|---|---|
+| <img src="media/prototipo/prototipo-completo.jpg" width="260" alt="Vista general del prototipo AgroFlex"> | **Vista general de AgroFlex**<br>Fotografía del prototipo completo, mostrando la disposición del controlador, los sensores, la pantalla y los elementos de riego y ventilación. |
+| <img src="media/prototipo/montaje-electronico.jpg" width="260" alt="Montaje electrónico de AgroFlex"> | **Montaje electrónico**<br>Vista del Arduino Nano Every y las conexiones utilizadas para integrar los sensores, la pantalla LCD y el circuito de control de los actuadores. |
+| <img src="media/prototipo/sensor-suelo-instalado.jpg" width="260" alt="Sensor de humedad instalado en el sustrato"> | **Instalación del sensor de humedad**<br>Ubicación del sensor en el sustrato para obtener lecturas representativas de la humedad disponible para la planta. |
+| <img src="media/prototipo/sensor-temperatura.jpg" width="260" alt="Sensor DHT22 instalado"> | **Supervisión de la temperatura**<br>Posición del sensor DHT22 para medir la temperatura ambiental sin obstruir innecesariamente la circulación del aire. |
+| <img src="media/prototipo/sistema-riego.jpg" width="260" alt="Sistema de suministro de agua"> | **Sistema de riego**<br>Instalación de la bomba o válvula y la conducción del agua hacia la planta. Esta imagen permite apreciar cómo se realiza el suministro de agua. |
+| <img src="media/prototipo/sistema-ventilacion.jpg" width="260" alt="Sistema de ventilación del prototipo"> | **Sistema de ventilación**<br>Montaje del ventilador y su conexión al circuito de control para responder a las condiciones de temperatura detectadas. |
+| <img src="media/prototipo/pantalla-lcd.jpg" width="260" alt="Lecturas en la pantalla LCD"> | **Visualización de datos**<br>Fotografía de la pantalla LCD durante el funcionamiento, mostrando las lecturas o los estados disponibles en el programa. |
+| <img src="media/prototipo/prueba-funcionamiento.jpg" width="260" alt="Prueba de funcionamiento de AgroFlex"> | **Pruebas de funcionamiento**<br>Registro de una prueba en la que se comprueba la lectura de los sensores y la respuesta de los actuadores ante las condiciones configuradas. |
+
+### 6.2. Registro de pruebas
+Además de las fotografías del montaje, se recomienda documentar las pruebas realizadas para comprobar que el sistema responde de acuerdo con su programación.
+
+| Prueba | Procedimiento | Resultado que se debe registrar |
+|---|---|---|
+| Lectura de humedad | Comprobar la lectura del sensor en distintas condiciones del sustrato. | Valores obtenidos y estabilidad de las mediciones. |
+| Activación del riego | Reducir la humedad por debajo del umbral configurado. | Si la bomba o válvula se activa y suministra agua correctamente. |
+| Lectura de temperatura | Comparar la lectura del DHT22 con las condiciones ambientales. | Temperatura registrada y comportamiento del sensor. |
+| Activación de la ventilación | Simular o esperar una temperatura superior al límite programado. | Si el ventilador se activa correctamente. |
+| Pantalla LCD | Encender el sistema y observar la información presentada. | Si los datos y estados se muestran correctamente. |
+| Ciclo automático | Mantener el sistema funcionando y observar sus respuestas. | Comportamiento general, posibles errores y ajustes necesarios. |
+
+Los resultados deben completarse con las observaciones reales obtenidas durante las pruebas. No se deben presentar resultados esperados como si ya hubieran sido comprobados.
+
+### 6.3. Evidencias y mejoras
+Las fotografías y los registros de prueba permitirán identificar oportunidades de mejora en la distribución de los componentes, la ubicación de los sensores, la conducción del agua y la respuesta de los actuadores.
+
+Esta documentación se actualizará conforme avance el desarrollo de AgroFlex, de modo que el repositorio refleje la evolución del prototipo desde el montaje inicial hasta las pruebas finales.
 
