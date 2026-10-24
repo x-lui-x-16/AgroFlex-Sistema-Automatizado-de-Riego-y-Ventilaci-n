@@ -6,8 +6,8 @@ Aquí se almacenan las fotografías de los componentes electrónicos y las imág
 ## 📂 Organización de las imágenes
 | Carpeta | Contenido |
 |---|---|
-| 🔌 [`componentes/`](componentes/) | Fotografías de los componentes electrónicos y dispositivos utilizados en el sistema. |
-| 🤖 [`prototipo/`](prototipo/) | Fotografías del montaje, la instalación de los sensores, los sistemas de riego y ventilación y las pruebas de funcionamiento. |
+| 🔌 [`Componentes`](componentes/) | Fotografías de los componentes electrónicos y dispositivos utilizados en el sistema. |
+| 🤖 [`Prototipo`](prototipo/) | Fotografías del montaje, la instalación de los sensores, los sistemas de riego y ventilación y las pruebas de funcionamiento. |
 
 ## 🎯 Propósito
 
